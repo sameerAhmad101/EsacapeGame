@@ -1,6 +1,14 @@
+##################################
+# Ignoring unreal generated files#
+##################################
 Intermediate/
-Content/StarterContent/
+Content/
 Saved/
 Binaries/
 Build/
 DerivedDataCach/
+#############################
+#Ignoring VS generated files#
+#############################
+*VC.db
+MyProject.VC.VC.opendb
