@@ -1,20 +1,20 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 #pragma once
-#include <array>
+
 #include "CoreMinimal.h"
 #include "Components/ActorComponent.h"
-#include "PositionReport.generated.h"
+#include "tableComponent.generated.h"
 
 
 UCLASS( ClassGroup=(Custom), meta=(BlueprintSpawnableComponent) )
-class MYPROJECT_API UPositionReport : public UActorComponent
+class MYPROJECT_API UtableComponent : public UActorComponent
 {
 	GENERATED_BODY()
 
 public:	
 	// Sets default values for this component's properties
-	UPositionReport();
+	UtableComponent();
 
 protected:
 	// Called when the game starts

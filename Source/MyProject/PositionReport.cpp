@@ -1,7 +1,12 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+/**
+*\file PositionReport.cpp.
+*\brief implementation of PositionReport component class.
+
+*\author Sameer Ahmad.  
+*/
 
 #include "PositionReport.h"
-
+#include "GameFramework/Actor.h"
 
 // Sets default values for this component's properties
 UPositionReport::UPositionReport()
@@ -19,6 +24,11 @@ void UPositionReport::BeginPlay()
 {
 	Super::BeginPlay();
 
+	FString name = GetOwner()->GetName();
+	FTransform position = GetOwner()->GetTransform();
+	FVector transformVector;
+	position.TransformVector(transformVector);
+	UE_LOG(LogTemp,Warning,TEXT("%s position report %s"), *name,*transformVector.ToString());
 	// ...
 	
 }
