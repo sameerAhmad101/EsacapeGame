@@ -2,8 +2,9 @@
 
 #pragma once
 
+#include "Classes/Engine/TriggerVolume.h"
 #include "CoreMinimal.h"
-#include "Components/ActorComponent.h"
+#include "GameFramework/Actor.h"
 #include "OpenDoor.generated.h"
 
 
@@ -15,6 +16,9 @@ class MYPROJECT_API UOpenDoor : public UActorComponent
 public:	
 	// Sets default values for this component's properties
 	UOpenDoor();
+	void openDoor();
+	void closeDoor();
+	AActor * m_actorOwner;
 
 protected:
 	// Called when the game starts
@@ -24,6 +28,22 @@ public:
 	// Called every frame
 	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
 
-		
-	
+private:
+	// Visible and uneditable.
+	UPROPERTY(VisibleAnywhere)
+		float openAngle = 90.f;
+	UPROPERTY(EditAnywhere)
+	ATriggerVolume *pressurePalete;
+
+	//UPROPERTY(EditAnywhere)
+		AActor *triggerAtor;
+
+		FRotator m_actorRotator;
+		FVector m_openRotationVector = {0.f, 40.f, 0.f};
+		FVector m_closeRotationVector;
+
+		float m_openDoorTime;
+
+		float closeDoorDelay = 1.f;
+
 };
